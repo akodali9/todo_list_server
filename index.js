@@ -4,10 +4,11 @@ const bodyParser = require("body-parser");
 const mongoose = require("mongoose");
 const noteupdaterouter = require("./features/noteupdate");
 const app = express();
+const MongoApiLink = require("./apikeys");
 const port = 3000;
 
 const DB =
-  "mongodb+srv://akashkodali6:BYPazZOqqMS0Xo44@deployment-1.twu5aqx.mongodb.net/?retryWrites=true&w=majority";
+  `mongodb+srv://${MongoApiLink}/?retryWrites=true&w=majority`;
 
 app.use(bodyParser.json());
 app.use("/auth", Authrouter);
